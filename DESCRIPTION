@@ -15,3 +15,7 @@ RoxygenNote: 7.1.2
 Roxygen: list(markdown=TRUE)
 Encoding: UTF-8
 LazyData: true
+Collate: 
+    'penAFTUtils.r'
+    'cva.penAFTFormula.R'
+    'proteins21.R'
