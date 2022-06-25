@@ -7,6 +7,8 @@ Authors@R:
 Maintainer: Andrzej Galecki <agalecki@umich.edu>
 Description: ?
              ?
+Suggests:
+    penAFT
 Depends:
     R (>= 4.0.0)
 License: GPL (>= 2)
