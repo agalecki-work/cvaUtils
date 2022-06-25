@@ -3,6 +3,7 @@
 \name{penAFT.cva}
 \alias{penAFT.cva}
 \alias{penAFT.cva.default}
+\alias{predict.penAFT.cva}
 \title{Do elastic net cross-validation for alpha and lambda simultaneously (based on glmnetUtils package)}
 \usage{
 penAFT.cva(x, ...)
@@ -18,9 +19,19 @@ penAFT.cva(x, ...)
   outerParallel = NULL,
   checkInnerParallel = TRUE
 )
+
+\method{predict}{penAFT.cva}(
+  object,
+  newx,
+  alpha,
+  which = match(TRUE, abs(object$alpha - alpha) < 1e-08),
+  ...
+)
 }
 \arguments{
 \item{x}{A matrix of predictor variables; or for the plotting methods, an object returned by \code{penAFT.cva}.}
+
+\item{...}{Further arguments to be passed to lower-level functions. In the case of \code{penAFT.cva}, these arguments are passed to \code{penAFT.cv}; for \code{predict} and \code{coef}, they are passed to \code{predict.cv.glmnet}; and for \code{plot} and \code{minlossplot}, to \code{plot}.}
 
 \item{logY}{A response vector ( with n-elements) of log-survival or log-censoring times.}
 
@@ -35,6 +46,12 @@ penAFT.cva(x, ...)
 \item{outerParallel}{Method of parallelising the outer loop over alpha. See 'Details' below. If \code{NULL}, the loop is run sequentially.}
 
 \item{checkInnerParallel}{If the outer loop is run in parallel, check that the inner loop over lambda will not be in contention for cores.}
+
+\item{object}{For the \code{predict} and \code{coef} methods, an object returned by \code{penAFT.cva}.}
+
+\item{newx}{For the \code{predict} method, a matrix of predictor variables.}
+
+\item{which}{An alternative way of specifying alpha; the index number of the desired value within the alpha vector. If both \code{which} and \code{alpha} are supplied, the former takes precedence.}
 }
 \description{
 Do elastic net cross-validation for alpha and lambda simultaneously (based on glmnetUtils package)
@@ -49,6 +66,8 @@ Optionally this loop over alpha can be parallelised; currently, \code{penAFT.cva
 }
 
 If the outer loop is run in parallel, \code{penAFT.cva} can check if the inner loop (over lambda) is also set to run in parallel, and disable this if it would lead to contention for cores. This is done if it is likely that the parallelisation is local on a multicore machine, ie if \code{outerParallel} is a \code{SOCKcluster} object running on \code{"localhost"}, or if the RevoScaleR compute context is local parallel.
+
+The \code{predict} method computes predictions for a specific alpha value given a \code{penAFT.cva} object. It looks up the supplied alpha (possibly supplied indirectly via the \code{which} argument) in the object's stored \code{alpha} vector, and calls \code{glmnet:::predict.cv.glmnet} on the corresponding \code{penAFt.cv} fit. All the arguments to that function are (or should be) supported.
 }
 \examples{
 \dontrun{
@@ -64,4 +83,6 @@ fit.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
 }
 \seealso{
 \link[penAFT:penAFT.cv]{penAFT::penAFT.cv}
+
+\link[glmnet:predict.cv.glmnet]{glmnet::predict.cv.glmnet}, \link[glmnet:predict.cv.glmnet]{glmnet::coef.cv.glmnet}
 }
