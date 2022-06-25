@@ -113,7 +113,12 @@ predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object
 {
     if(is.na(which))
         stop("supplied alpha value not found")
+    if (class(object) != "penAFT.cva") {
+        stop("Input 'fit' must be a model fit from penAFT.cva")
+    }
+   
     mod <- object$modlist[[which]]
-    predict(mod, newx, ...)
+    penAFT::penAFT.predict(mod, Xnew - newx, lambda = NULL)
+    ##predict(mod, newx, ...)
 }
 
