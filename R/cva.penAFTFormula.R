@@ -115,7 +115,7 @@ predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object
     if(is.na(which)) {
         stop("supplied alpha value not found")
    } else {
-        message ("Predicted values for alpha =", object$alpha[which], "\n")    
+        message ("Predicted values from predict.penAFT.cva for alpha =", object$alpha[which])    
    } 
    
    if (class(object) != "penAFT.cva") {
@@ -124,8 +124,32 @@ predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object
     
     #cat("which=", which, "\n")
     mod <- object$modlist[[which]]
-    if (is.null(lambda)) message("lambda is set to optimal value lambda which minimized cross-validation linear predictor scores.")
+    if (is.null(lambda)) message("lambda is set to optimal value which minimized C-V linear predictor scores.")
     # print(str(mod))
     penAFT::penAFT.predict(mod, Xnew = newx, lambda = lambda)
 }
 
+#' @rdname penAFT.cva
+#' @export
+minlossplot <- function(x, ...)
+UseMethod("minlossplot")
+
+
+#' @param cv.type For `minlossplot`, which cross-validated loss value to plot for each value of alpha. This can be either `"min"` which is the minimum loss, or `"1se"` which is the highest loss within 1 standard error of the minimum. The default is `"1se"`.
+#'
+#' @details
+#' The `minlossplot` function gives the best (lowest) cross-validated loss for each value of alpha.
+#'
+#' @rdname penAFT.cva
+#' @export
+minlossplot.penAFT.cva <- function(x, ..., cv.type=c("min", "1se"))
+{
+    alpha <- x$alpha
+    cv.type <- match.arg(cv.type)
+    cv.type <- paste0("lambda.", cv.type)
+    cvm <- sapply(x$modlist, function(mod) {
+        mod$cvm[mod$lambda == mod[[cv.type]]]
+    })
+    plot(alpha, cvm, ylab="CV loss", ...)
+    invisible(x)
+}
