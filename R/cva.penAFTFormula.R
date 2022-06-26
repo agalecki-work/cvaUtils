@@ -120,7 +120,9 @@ predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object
        } else {
          message("lambda =", lambda)
        }
+    cat("which=", which, "\n")
     mod <- object$modlist[[which]]
+    print(str(mod))
     penAFT::penAFT.predict(mod, Xnew = newx, lambda = lambda)
 }
 
