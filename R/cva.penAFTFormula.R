@@ -109,16 +109,19 @@ penAFT.cva.default <- function (
 #' @method predict penAFT.cva
 #' @rdname penAFT.cva
 #' @export
-predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8), ...)
-{
+predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8), 
+      lambda=NULL, ...){
     if(is.na(which))
         stop("supplied alpha value not found")
     if (class(object) != "penAFT.cva") {
         stop("Input 'fit' must be a model fit from penAFT.cva")
     }
-   
+    if (is.null(lambda)) {message("lambda is null")
+       } else {
+         message("lambda =", lambda)
+       }
     mod <- object$modlist[[which]]
-    penAFT::penAFT.predict(mod, Xnew - newx, lambda = NULL)
+    penAFT::penAFT.predict(mod, Xnew = newx, lambda = lambda)
     ##predict(mod, newx, ...)
 }
 
