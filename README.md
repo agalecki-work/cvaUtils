@@ -39,8 +39,10 @@ fit.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
                alpha = alpha,
                nlambda = 50, lambda.ratio.min = 0.1, lambda = NULL,
                penalty = "EN", nfolds = 5, seed = 1234)
+```
 
-Save fit for later use 
+Save fit for later use.
+
 ```
 setwd("C:/temp")
 save(fit.en.cva, file = "fit.en.cva.Rdata")
@@ -49,6 +51,7 @@ save(fit.en.cva, file = "fit.en.cva.Rdata")
 ### Predict, coef
 
 ```
+load("fit.en.cva.Rdata")
 predict(fit.en.cva, newx=X[1:5,],alpha = alpha[3])
 
 ```
