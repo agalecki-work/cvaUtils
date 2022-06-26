@@ -3,7 +3,7 @@
 \name{penAFT.cva}
 \alias{penAFT.cva}
 \alias{penAFT.cva.default}
-\alias{penAFT.cva_predict}
+\alias{predict.penAFT.cva}
 \title{Do elastic net cross-validation for alpha and lambda simultaneously (based on glmnetUtils package)}
 \usage{
 penAFT.cva(x, ...)
@@ -20,7 +20,7 @@ penAFT.cva(x, ...)
   checkInnerParallel = TRUE
 )
 
-penAFT.cva_predict(
+\method{predict}{penAFT.cva}(
   object,
   newx,
   alpha,

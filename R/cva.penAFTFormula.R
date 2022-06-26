@@ -106,10 +106,10 @@ penAFT.cva.default <- function (
 #' @seealso
 #' [glmnet::predict.cv.glmnet], [glmnet::coef.cv.glmnet]
 #'
-### @ method predict penAFT.cva
+#' @method predict penAFT.cva
 #' @rdname penAFT.cva
 #' @export
-penAFT.cva_predict <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8), 
+predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8), 
       lambda=NULL, ...){
     if(is.na(which))
         stop("supplied alpha value not found")
