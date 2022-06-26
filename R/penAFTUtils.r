@@ -10,8 +10,8 @@
 #' * Methods for `plot`, `predict` and `coef` for the above.
 #'
 #' @docType package
-#' @name JSKPanel
-#' @aliases JSKPanel-package
+#' @name penAFTutils
+#' @aliases penAFTutils-package
 NULL
 
 
