@@ -148,7 +148,7 @@ minlossplot.penAFT.cva <- function(x, ..., cv.type=c("min", "1se"))
     cv.type <- match.arg(cv.type)
     cv.type <- paste0("lambda.", cv.type)
     cvm <- sapply(x$modlist, function(mod) {
-        mod$cvm[mod$lambda == mod[[cv.type]]]
+        mod$cv.err.linPred[mod$lambda == mod[[cv.type]]] # cvm -> cv.err.linPred
     })
     plot(alpha, cvm, ylab="CV loss", ...)
     invisible(x)
