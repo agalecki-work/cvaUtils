@@ -153,7 +153,7 @@ minlossplot.penAFT.cva <- function(x, ..., cv.type=c("min", "1se"))
     })
     #plot(alpha, cvm, ylab="CV loss", ...)
     nx <- length(alpha)
-    matplot(cvm, type = c("b"), pch =1, col= 1:nc)
+    matplot(cvm, type = c("b"), pch =1, col= 1:nx)
     legend("topleft", legend = 1:nx, col=1:nx, pch=1)
     invisible(x)
 }
