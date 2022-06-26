@@ -122,6 +122,5 @@ predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object
        }
     mod <- object$modlist[[which]]
     penAFT::penAFT.predict(mod, Xnew = newx, lambda = lambda)
-    ##predict(mod, newx, ...)
 }
 
