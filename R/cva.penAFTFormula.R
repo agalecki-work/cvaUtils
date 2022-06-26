@@ -106,7 +106,7 @@ penAFT.cva.default <- function (
 #' @seealso
 #' [glmnet::predict.cv.glmnet], [glmnet::coef.cv.glmnet]
 #'
-#' @method predict penAFT.cva
+### @method predict penAFT.cva
 #' @rdname penAFT.cva
 #' @export
 predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8), 

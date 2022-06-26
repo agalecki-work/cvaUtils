@@ -25,6 +25,7 @@ penAFT.cva(x, ...)
   newx,
   alpha,
   which = match(TRUE, abs(object$alpha - alpha) < 1e-08),
+  lambda = NULL,
   ...
 )
 }
