@@ -78,7 +78,7 @@ If the outer loop is run in parallel, \code{penAFT.cva} can check if the inner l
 
 The \code{predict} method computes predictions for a specific alpha value given a \code{penAFT.cva} object. It looks up the supplied alpha (possibly supplied indirectly via the \code{which} argument) in the object's stored \code{alpha} vector, and calls \code{penAFT::penAFT.predict} on the corresponding \code{penAFT.cv} fit. All the arguments to that function are (or should be) supported.
 
-The \code{minlossplot} function gives the best (lowest) cross-validated loss for each value of alpha.
+The \code{minlossplot} function gives the best (lowest) C-V loss for each value of alpha.
 }
 \examples{
 \dontrun{
@@ -93,7 +93,5 @@ fit.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
 }
 }
 \seealso{
-\link[penAFT:penAFT.cv]{penAFT::penAFT.cv}
-
 {penAFT::penAFT.predict], \link[glmnet:predict.cv.glmnet]{glmnet::coef.cv.glmnet},
 }

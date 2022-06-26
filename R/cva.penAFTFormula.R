@@ -38,8 +38,8 @@ UseMethod("penAFT.cva")
 #'               nlambda = 50, lambda.ratio.min = 0.1, lambda = NULL,
 #'               penalty = "EN", nfolds = 5, seed = 1234)
 #' }
-#' @seealso
-#' [penAFT::penAFT.cv]
+## ' @seealso
+## ' \co[penAFT::penAFT.cv]
 #' @rdname penAFT.cva
 #' @method penAFT.cva default
 #' @importFrom parallel parLapply
@@ -129,6 +129,7 @@ predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object
     penAFT::penAFT.predict(mod, Xnew = newx, lambda = lambda)
 }
 
+#' @name penAFT.cva
 #' @rdname penAFT.cva
 #' @export
 minlossplot <- function(x, ...)
@@ -138,7 +139,7 @@ UseMethod("minlossplot")
 #' @param cv.type For `minlossplot`, which cross-validated loss value to plot for each value of alpha. This can be either `"min"` which is the minimum loss, or `"1se"` which is the highest loss within 1 standard error of the minimum. The default is `"1se"`.
 #'
 #' @details
-#' The `minlossplot` function gives the best (lowest) cross-validated loss for each value of alpha.
+#' The `minlossplot` function gives the best (lowest) C-V loss for each value of alpha.
 #'
 #' @rdname penAFT.cva
 #' @export
@@ -146,6 +147,7 @@ minlossplot.penAFT.cva <- function(x, ..., cv.type=c("min", "1se"))
 {
     alpha <- x$alpha
     cv.type <- match.arg(cv.type)
+    
     cv.type <- paste0("lambda.", cv.type)
     cvm <- sapply(x$modlist, function(mod) {
         mod$cv.err.linPred[mod$lambda == mod[[cv.type]]] # cvm -> cv.err.linPred
