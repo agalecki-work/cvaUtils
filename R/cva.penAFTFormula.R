@@ -151,6 +151,9 @@ minlossplot.penAFT.cva <- function(x, ..., cv.type=c("min", "1se"))
     cvm <- sapply(x$modlist, function(mod) {
         mod$cv.err.linPred[mod$lambda == mod[[cv.type]]] # cvm -> cv.err.linPred
     })
-    plot(alpha, cvm, ylab="CV loss", ...)
+    #plot(alpha, cvm, ylab="CV loss", ...)
+    nx <- length(alpha)
+    matplot(cvm, type = c("b"), pch =1, col= 1:nc)
+    legend("topleft", legend = 1:nx, col=1:nx, pch=1)
     invisible(x)
 }
