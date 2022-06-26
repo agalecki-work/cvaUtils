@@ -45,7 +45,7 @@ Save fit for later use.
 
 ```
 setwd("C:/temp")
-save(fit.en.cva, file = "fit.en.cva.Rdata")
+# save(fit.en.cva, file = "fit.en.cva.Rdata")
 ```
 
 ### Predict, coef

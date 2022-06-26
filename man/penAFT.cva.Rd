@@ -4,6 +4,8 @@
 \alias{penAFT.cva}
 \alias{penAFT.cva.default}
 \alias{predict.penAFT.cva}
+\alias{minlossplot}
+\alias{minlossplot.penAFT.cva}
 \title{Do elastic net cross-validation for alpha and lambda simultaneously (based on glmnetUtils package)}
 \usage{
 penAFT.cva(x, ...)
@@ -28,6 +30,10 @@ penAFT.cva(x, ...)
   lambda = NULL,
   ...
 )
+
+minlossplot(x, ...)
+
+\method{minlossplot}{penAFT.cva}(x, ..., cv.type = c("min", "1se"))
 }
 \arguments{
 \item{x}{A matrix of predictor variables; or for the plotting methods, an object returned by \code{penAFT.cva}.}
@@ -38,7 +44,7 @@ penAFT.cva(x, ...)
 
 \item{delta}{A binary vector indicating whether the jth element of logY is an observed log-survival time (d_j = 1) or a log-censoring time (d_j = 0) for j=1,..., n.}
 
-\item{alpha}{A vector of alpha values for which to do cross-validation. The default is a sequence of 11 values more closely spaced around alpha = 0. For the \code{predict} and \code{coef} methods, the specific value of alpha for which to return predictions/regression coefficients.}
+\item{alpha}{desired value of alpha parameter (scalar)}
 
 \item{nfolds}{The number of cross-validation folds to use. Defaults to 10.}
 
@@ -53,6 +59,8 @@ penAFT.cva(x, ...)
 \item{newx}{For the \code{predict} method, a matrix of predictor variables.}
 
 \item{which}{An alternative way of specifying alpha; the index number of the desired value within the alpha vector. If both \code{which} and \code{alpha} are supplied, the former takes precedence.}
+
+\item{cv.type}{For \code{minlossplot}, which cross-validated loss value to plot for each value of alpha. This can be either \code{"min"} which is the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum. The default is \code{"1se"}.}
 }
 \description{
 Do elastic net cross-validation for alpha and lambda simultaneously (based on glmnetUtils package)
@@ -68,7 +76,9 @@ Optionally this loop over alpha can be parallelised; currently, \code{penAFT.cva
 
 If the outer loop is run in parallel, \code{penAFT.cva} can check if the inner loop (over lambda) is also set to run in parallel, and disable this if it would lead to contention for cores. This is done if it is likely that the parallelisation is local on a multicore machine, ie if \code{outerParallel} is a \code{SOCKcluster} object running on \code{"localhost"}, or if the RevoScaleR compute context is local parallel.
 
-The \code{predict} method computes predictions for a specific alpha value given a \code{penAFT.cva} object. It looks up the supplied alpha (possibly supplied indirectly via the \code{which} argument) in the object's stored \code{alpha} vector, and calls \code{glmnet:::predict.cv.glmnet} on the corresponding \code{penAFt.cv} fit. All the arguments to that function are (or should be) supported.
+The \code{predict} method computes predictions for a specific alpha value given a \code{penAFT.cva} object. It looks up the supplied alpha (possibly supplied indirectly via the \code{which} argument) in the object's stored \code{alpha} vector, and calls \code{penAFT::penAFT.predict} on the corresponding \code{penAFT.cv} fit. All the arguments to that function are (or should be) supported.
+
+The \code{minlossplot} function gives the best (lowest) cross-validated loss for each value of alpha.
 }
 \examples{
 \dontrun{
@@ -85,5 +95,5 @@ fit.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
 \seealso{
 \link[penAFT:penAFT.cv]{penAFT::penAFT.cv}
 
-\link[glmnet:predict.cv.glmnet]{glmnet::predict.cv.glmnet}, \link[glmnet:predict.cv.glmnet]{glmnet::coef.cv.glmnet}
+{penAFT::penAFT.predict], \link[glmnet:predict.cv.glmnet]{glmnet::coef.cv.glmnet},
 }
