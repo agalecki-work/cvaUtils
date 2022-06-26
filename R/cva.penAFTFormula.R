@@ -104,8 +104,7 @@ penAFT.cva.default <- function (
 #' @details
 #' The `predict` method computes predictions for a specific alpha value given a `penAFT.cva` object. It looks up the supplied alpha (possibly supplied indirectly via the `which` argument) in the object's stored `alpha` vector, and calls `penAFT::penAFT.predict` on the corresponding `penAFT.cv` fit. All the arguments to that function are (or should be) supported.
 #'
-#' @seealso
-#' {penAFT::penAFT.predict], [glmnet::coef.cv.glmnet], 
+#' @seealso {penAFT::penAFT.predict], [glmnet::coef.cv.glmnet] 
 #'
 #' @method predict penAFT.cva
 #' @rdname penAFT.cva

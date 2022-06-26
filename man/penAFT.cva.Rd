@@ -93,5 +93,5 @@ fit.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
 }
 }
 \seealso{
-{penAFT::penAFT.predict], \link[glmnet:predict.cv.glmnet]{glmnet::coef.cv.glmnet},
+{penAFT::penAFT.predict], \link[glmnet:predict.cv.glmnet]{glmnet::coef.cv.glmnet}
 }
