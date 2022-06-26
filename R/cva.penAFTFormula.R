@@ -128,7 +128,6 @@ predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object
     penAFT::penAFT.predict(mod, Xnew = newx, lambda = lambda)
 }
 
-#' @name penAFT.cva
 #' @rdname penAFT.cva
 #' @export
 minlossplot <- function(x, ...)
@@ -148,6 +147,7 @@ minlossplot.penAFT.cva <- function(x, ..., cv.type=c("min", "1se"))
     cv.type <- match.arg(cv.type)
     
     cv.type <- paste0("lambda.", cv.type)
+    print(cv.type)
     cvm <- sapply(x$modlist, function(mod) {
         mod$cv.err.linPred[mod$lambda == mod[[cv.type]]] # cvm -> cv.err.linPred
     })

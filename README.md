@@ -22,6 +22,7 @@ Note `dtc` dataframe contains complete cases.
 
 ```
 library(penAFTutils)
+rm(list =ls())
 str(proteins21)
 dtc <- proteins21
 ```
@@ -58,5 +59,6 @@ penAFT::penAFT.predict(mod, Xnew =X[1:5,], lambda = mod$full.fit$lmbda[10])
 
 
 predict(fit.en.cva, newx=X[1:5,],alpha = alpha[3])
+minlossplot(fit.en.cva)
 
 ```
