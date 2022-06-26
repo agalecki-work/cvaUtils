@@ -97,32 +97,35 @@ penAFT.cva.default <- function (
 
 #' @param object For the `predict` and `coef` methods, an object returned by `penAFT.cva`.
 #' @param newx For the `predict` method, a matrix of predictor variables.
+#' @param alpha desired value of alpha parameter (scalar)
 #' @param which An alternative way of specifying alpha; the index number of the desired value within the alpha vector. If both `which` and `alpha` are supplied, the former takes precedence.
 #' @param ... Further arguments to be passed to lower-level functions. In the case of `penAFT.cva`, these arguments are passed to `penAFT.cv`; for `predict` and `coef`, they are passed to `predict.cv.glmnet`; and for `plot` and `minlossplot`, to `plot`.
 #'
 #' @details
-#' The `predict` method computes predictions for a specific alpha value given a `penAFT.cva` object. It looks up the supplied alpha (possibly supplied indirectly via the `which` argument) in the object's stored `alpha` vector, and calls `glmnet:::predict.cv.glmnet` on the corresponding `penAFt.cv` fit. All the arguments to that function are (or should be) supported.
+#' The `predict` method computes predictions for a specific alpha value given a `penAFT.cva` object. It looks up the supplied alpha (possibly supplied indirectly via the `which` argument) in the object's stored `alpha` vector, and calls `penAFT::penAFT.predict` on the corresponding `penAFT.cv` fit. All the arguments to that function are (or should be) supported.
 #'
 #' @seealso
-#' [glmnet::predict.cv.glmnet], [glmnet::coef.cv.glmnet]
+#' {penAFT::penAFT.predict], [glmnet::coef.cv.glmnet], 
 #'
 #' @method predict penAFT.cva
 #' @rdname penAFT.cva
 #' @export
-predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8), 
-      lambda=NULL, ...){
-    if(is.na(which))
+predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8),  
+    lambda = NULL, ...){
+    if(is.na(which)) {
         stop("supplied alpha value not found")
-    if (class(object) != "penAFT.cva") {
+   } else {
+        message ("Predicted values for alpha =", object$alpha[which], "\n")    
+   } 
+   
+   if (class(object) != "penAFT.cva") {
         stop("Input 'fit' must be a model fit from penAFT.cva")
     }
-    if (is.null(lambda)) {message("lambda is null")
-       } else {
-         message("lambda =", lambda)
-       }
-    cat("which=", which, "\n")
+    
+    #cat("which=", which, "\n")
     mod <- object$modlist[[which]]
-    print(str(mod))
+    if (is.null(lambda)) message("lambda is set to optimal value lambda which minimized cross-validation linear predictor scores.")
+    # print(str(mod))
     penAFT::penAFT.predict(mod, Xnew = newx, lambda = lambda)
 }
 
