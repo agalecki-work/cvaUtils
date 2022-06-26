@@ -52,6 +52,6 @@ save(fit.en.cva, file = "fit.en.cva.Rdata")
 
 ```
 load("fit.en.cva.Rdata")
-predict.penAFT.cva(fit.en.cva, newx=X[1:5,],alpha = alpha[3])
+penAFT.cva_predict(fit.en.cva, newx=X[1:5,],alpha = alpha[3])
 
 ```
