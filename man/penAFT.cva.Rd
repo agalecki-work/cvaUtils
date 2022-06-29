@@ -33,7 +33,7 @@ penAFT.cva(x, ...)
 
 minlossplot(x, ...)
 
-\method{minlossplot}{penAFT.cva}(x, ..., cv.type = c("min", "1se"))
+\method{minlossplot}{penAFT.cva}(x, ..., cv.type = c("min", "1se"), plot.it = c("min", "all"))
 }
 \arguments{
 \item{x}{A matrix of predictor variables; or for the plotting methods, an object returned by \code{penAFT.cva}.}
