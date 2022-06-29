@@ -38,8 +38,6 @@ UseMethod("penAFT.cva")
 #'               nlambda = 50, lambda.ratio.min = 0.1, lambda = NULL,
 #'               penalty = "EN", nfolds = 5, seed = 1234)
 #' }
-## ' @seealso
-## ' \co[penAFT::penAFT.cv]
 #' @rdname penAFT.cva
 #' @method penAFT.cva default
 #' @importFrom parallel parLapply
