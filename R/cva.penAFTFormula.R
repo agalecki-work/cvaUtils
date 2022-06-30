@@ -6,6 +6,8 @@ NULL
 penAFT.cva <- function(x, ...)
 UseMethod("penAFT.cva")
 
+#' Elastic net cross-validation for alpha and lambda
+#' 
 #' Do elastic net cross-validation for alpha and lambda simultaneously (based on glmnetUtils package)
 #'
 #' @param x A matrix of predictor variables; or for the plotting methods, an object returned by `penAFT.cva`.
