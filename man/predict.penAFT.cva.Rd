@@ -9,23 +9,20 @@
   newx,
   alpha,
   which = match(TRUE, abs(object$alpha - alpha) < 1e-08),
-  lambda = NULL,
-  ...
+  lambda = NULL
 )
 }
 \arguments{
-\item{object}{An object returned by \code{penAFT.cva}.}
+\item{object}{An object of \code{penAFT.cva} class returned by \code{penAFT.cva()}.}
 
 \item{newx}{A matrix of predictors.}
 
-\item{alpha}{desired value of alpha parameter (scalar)}
+\item{alpha}{desired value of \code{alpha} parameter (scalar)}
 
 \item{which}{An alternative way of specifying alpha; the index number of the desired value.
 within the \code{alpha} vector. If both \code{which} and \code{alpha} are supplied, the former takes precedence.}
 
 \item{lambda}{if \code{lambda} is set to \code{NULL} the optimal value which minimizes C-V linear predictor scores is selected}
-
-\item{...}{Further arguments to be passed to \code{penAFT::penAFT.predict()} function.}
 }
 \description{
 \code{predict} method for objects of \code{penAFT.cva} class

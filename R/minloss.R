@@ -3,7 +3,7 @@ UseMethod("minlossplot")
 
 #' minlossplot
 #`
-#' @papram x Object 
+#' @param x Object 
 #' @param cv.type For `minlossplot`, which cross-validated loss value to plot for each value of alpha. This can be either `"min"` which is the minimum loss, or `"1se"` which is the highest loss within 1 standard error of the minimum. The default is `"1se"`.
 #'
 #' @details
