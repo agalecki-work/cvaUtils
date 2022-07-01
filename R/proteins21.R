@@ -7,5 +7,5 @@
 #'   \item{group}{Label1}
 #'   \item{score}{Label2}
 #' }
-#' @source <https://www.github.com/agalecki-work/JSKPanel>
+#' @source <https://www.github.com/agalecki-work/penAFTutils>
 "proteins21"
