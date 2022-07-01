@@ -7,6 +7,8 @@
 \method{minlossplot}{penAFT.cva}(x, ..., cv.type = c("min", "1se"), plot.it = c("min", "all"))
 }
 \arguments{
+\item{x}{Object}
+
 \item{cv.type}{For \code{minlossplot}, which cross-validated loss value to plot for each value of alpha. This can be either \code{"min"} which is the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum. The default is \code{"1se"}.}
 }
 \description{
