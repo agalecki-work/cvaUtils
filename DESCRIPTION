@@ -20,4 +20,6 @@ LazyData: true
 Collate: 
     'penAFTUtils.r'
     'cva.penAFTFormula.R'
+    'minloss.R'
+    'predict.penAFT.R'
     'proteins21.R'
