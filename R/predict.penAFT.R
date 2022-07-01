@@ -1,12 +1,11 @@
 #' `predict` method for objects of `penAFT.cva` class
 #'
-#' @param object An object returned by `penAFT.cva`.
+#' @param object An object of `penAFT.cva` class returned by `penAFT.cva()`.
 #' @param newx  A matrix of predictors.
-#' @param alpha desired value of alpha parameter (scalar)
+#' @param alpha desired value of `alpha` parameter (scalar)
 #' @param which An alternative way of specifying alpha; the index number of the desired value.
 #'     within the `alpha` vector. If both `which` and `alpha` are supplied, the former takes precedence.
 #' @param lambda  if `lambda` is set to `NULL` the optimal value which minimizes C-V linear predictor scores is selected
-#' @param ... Further arguments to be passed to `penAFT::penAFT.predict()` function. 
 #'
 #' @details
 #' The `predict` method computes predictions for a specific alpha value for a given `penAFT.cva` object. 
@@ -19,7 +18,7 @@
 #' @rdname predict.penAFT.cva
 #' @export
 predict.penAFT.cva <- function(object, newx, alpha, which=match(TRUE, abs(object$alpha - alpha) < 1e-8),  
-    lambda = NULL, ...){
+    lambda = NULL){
     if(is.na(which)) {
         stop("supplied alpha value not found")
    } else {
