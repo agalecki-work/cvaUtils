@@ -5,7 +5,7 @@
 #' @param alpha desired value of alpha parameter (scalar)
 #' @param which An alternative way of specifying alpha; the index number of the desired value.
 #'     within the `alpha` vector. If both `which` and `alpha` are supplied, the former takes precedence.
-#' @lambda  if `lambda` is set to `NULL` the optimal value which minimizes C-V linear predictor scores is selected
+#' @param lambda  if `lambda` is set to `NULL` the optimal value which minimizes C-V linear predictor scores is selected
 #' @param ... Further arguments to be passed to `penAFT::penAFT.predict()` function. 
 #'
 #' @details

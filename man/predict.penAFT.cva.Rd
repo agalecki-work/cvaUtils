@@ -2,7 +2,7 @@
 % Please edit documentation in R/predict.penAFT.R
 \name{predict.penAFT.cva}
 \alias{predict.penAFT.cva}
-\title{\code{predict} method for an object of \code{penAFT.cva} class}
+\title{\code{predict} method for objects of \code{penAFT.cva} class}
 \usage{
 \method{predict}{penAFT.cva}(
   object,
@@ -14,22 +14,25 @@
 )
 }
 \arguments{
-\item{object}{For the \code{predict} and \code{coef} methods, an object returned by \code{penAFT.cva}.
-predict method for objects of penAFT.cva class}
+\item{object}{An object returned by \code{penAFT.cva}.}
 
-\item{newx}{For the \code{predict} method, a matrix of predictor variables.}
+\item{newx}{A matrix of predictors.}
 
 \item{alpha}{desired value of alpha parameter (scalar)}
 
-\item{which}{An alternative way of specifying alpha; the index number of the desired value within the alpha vector. If both \code{which} and \code{alpha} are supplied, the former takes precedence.}
+\item{which}{An alternative way of specifying alpha; the index number of the desired value.
+within the \code{alpha} vector. If both \code{which} and \code{alpha} are supplied, the former takes precedence.}
 
-\item{...}{Further arguments to be passed to lower-level functions. In the case of \code{penAFT.cva}, these arguments are passed to \code{penAFT.cv}; for \code{predict} and \code{coef}, they are passed to \code{predict.cv.glmnet}; and for \code{plot} and \code{minlossplot}, to \code{plot}.}
+\item{lambda}{if \code{lambda} is set to \code{NULL} the optimal value which minimizes C-V linear predictor scores is selected}
+
+\item{...}{Further arguments to be passed to \code{penAFT::penAFT.predict()} function.}
 }
 \description{
-\code{predict} method for an object of \code{penAFT.cva} class
+\code{predict} method for objects of \code{penAFT.cva} class
 }
 \details{
-The \code{predict} method computes predictions for a specific alpha value given a \code{penAFT.cva} object. It looks up the supplied alpha (possibly supplied indirectly via the \code{which} argument) in the object's stored \code{alpha} vector, and calls \code{penAFT::penAFT.predict} on the corresponding \code{penAFT.cv} fit. All the arguments to that function are (or should be) supported.
+The \code{predict} method computes predictions for a specific alpha value for a given \code{penAFT.cva} object.
+in the object's stored \code{alpha} vector, and calls \code{penAFT::penAFT.predict} on the corresponding \code{penAFT.cv} fit. All the arguments to that function are (or should be) supported.
 }
 \seealso{
 \link[penAFT:penAFT.predict]{penAFT::penAFT.predict}, \link[glmnet:predict.cv.glmnet]{glmnet::coef.cv.glmnet}
