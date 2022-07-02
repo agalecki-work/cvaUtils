@@ -1,6 +1,8 @@
 #' minlossplot 
 #'
 #' minlossplot
+#'
+#' @export
 minlossplot <- function(x, ...)
 UseMethod("minlossplot")
 
@@ -15,7 +17,6 @@ UseMethod("minlossplot")
 #' The `minlossplot` function gives the best (lowest) C-V loss for each value of alpha.
 #' @rdname minlossplot.penAFT.cva
 #' @method minlossplot penAFT.cva
-#' @export minlossplot.penAFT.cva
 #' @export
 minlossplot.penAFT.cva <- function(x, ..., 
     cv.type = c("min", "1se"), 
