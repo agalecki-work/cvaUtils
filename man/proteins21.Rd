@@ -12,7 +12,7 @@ A data frame with x rows and ? variables:
 }
 }
 \source{
-\url{https://www.github.com/agalecki-work/JSKPanel}
+\url{https://www.github.com/agalecki-work/penAFTutils}
 }
 \usage{
 proteins21
