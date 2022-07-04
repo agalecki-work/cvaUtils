@@ -8,7 +8,8 @@ Maintainer: Andrzej Galecki <agalecki@umich.edu>
 Description: ?
              ?
 Suggests:
-    penAFT
+    penAFT,
+    testthat (>= 3.0.0)
 Depends:
     R (>= 4.0.0)
 License: GPL (>= 2)
@@ -23,3 +24,4 @@ Collate:
     'minloss.R'
     'predict.penAFT.R'
     'proteins21.R'
+Config/testthat/edition: 3
