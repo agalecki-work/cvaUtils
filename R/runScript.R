@@ -26,12 +26,10 @@ runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.
         else {
             errFun <- stop
             errMsg <- paste("Example", example, "does not exist. ")
-        }
-        errFun(errMsg, "Scripts in ", scriptsDir, " are: \n", paste("\"",scriptsList, 
+            errFun(errMsg, "Scripts in ", scriptsDir, " are: \n", paste("\"",scriptsList, 
             collapse = "\", \n", sep=""), "\"")   
     }
-    if (!is.na(script)) {
+    }
        sourceText <- source(scriptFile, echo=echo)
-    } else sourceText <- NULL
-    sourceText
+       sourceText
 }
