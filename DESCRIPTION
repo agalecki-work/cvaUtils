@@ -24,4 +24,5 @@ Collate:
     'minloss.R'
     'predict.penAFT.R'
     'proteins21.R'
+    'runScript.R'
 Config/testthat/edition: 3

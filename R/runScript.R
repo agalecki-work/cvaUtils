@@ -29,6 +29,7 @@ runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.
         }
         errFun(errMsg, "Scripts in ", scriptsDir, " are: \n", paste("\"",scriptsList, 
             collapse = "\", \n", sep=""), "\"")   
-        sourceText <- source(scriptFile, echo=echo)
-        sourceText
+    }
+    sourceText <- source(scriptFile, echo=echo)
+    sourceText
 }
