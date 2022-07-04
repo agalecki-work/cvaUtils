@@ -19,7 +19,7 @@ runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.
     scriptsList <- list.files(scriptsDir, pattern = "[[:alnum:]][.][R]$")
     scriptFile <- file.path(scriptsDir, script)
     if (!(script %in% scriptsList)) {
-    if (is.na(script)) {
+        if (is.na(script)) {
             errFun <- message
             errMsg <- ""
         }
@@ -30,6 +30,8 @@ runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.
         errFun(errMsg, "Scripts in ", scriptsDir, " are: \n", paste("\"",scriptsList, 
             collapse = "\", \n", sep=""), "\"")   
     }
-    sourceText <- source(scriptFile, echo=echo)
+    if (!is.na(script)) {
+       sourceText <- source(scriptFile, echo=echo)
+    } else sourceText <- NULL
     sourceText
 }
