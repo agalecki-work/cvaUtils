@@ -9,3 +9,4 @@
 #' }
 #' @source <https://www.github.com/agalecki-work/penAFTutils>
 "proteins21"
+NULL
