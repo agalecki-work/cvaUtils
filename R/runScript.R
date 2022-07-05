@@ -14,7 +14,7 @@
 #'
 
 runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.1.3",
-    echo = TRUE, Rout = stdout()){
+    echo = TRUE){
     scriptsDir <- system.file(subdir, package = package)
     scriptsList <- list.files(scriptsDir, pattern = "[[:alnum:]][.][R]$")
     scriptFile <- file.path(scriptsDir, script)
