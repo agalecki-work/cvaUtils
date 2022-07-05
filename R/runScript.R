@@ -32,6 +32,6 @@ runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.
     
     } else { 
        sourceText <- source(scriptFile, echo=echo)
-       writeLines(sourceText, con = Rout)
+       sourceText
     }
 }
