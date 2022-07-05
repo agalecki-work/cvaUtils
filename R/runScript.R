@@ -14,7 +14,7 @@
 #'
 
 runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.1.3",
-    echo = TRUE){
+    echo = TRUE, Rout = stdout()){
     scriptsDir <- system.file(subdir, package = package)
     scriptsList <- list.files(scriptsDir, pattern = "[[:alnum:]][.][R]$")
     scriptFile <- file.path(scriptsDir, script)
@@ -32,6 +32,6 @@ runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.
     
     } else { 
        sourceText <- source(scriptFile, echo=echo)
-       sourceText
+       writeLines(sourceText, con = Rout)
     }
 }
