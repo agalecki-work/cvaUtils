@@ -13,7 +13,7 @@
 #' @examples runScript()
 #'
 
-runScript <- function(script= NA,  package = "penAFTutils", subdir = "scriptsR4.1.3",
+runScript <- function(script= NA,  package = "cvaUutils", subdir = "scriptsR4.1.3",
     echo = TRUE){
     scriptsDir <- system.file(subdir, package = package)
     scriptsList <- list.files(scriptsDir, pattern = "[[:alnum:]][.][R]$")
