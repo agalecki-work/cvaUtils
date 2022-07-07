@@ -1,6 +1,6 @@
-Package: penAFTutils
-Version: 0.0-1
-Title: Utility Functions for penAFT package
+Package: cvaUtils
+Version: 0.0-3
+Title: Utility Functions for cva objects
 Authors@R: 
     person("Andrzej", "Galecki", , "agalecki@umich.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-1542-4001"))
@@ -8,7 +8,6 @@ Maintainer: Andrzej Galecki <agalecki@umich.edu>
 Description: ?
              ?
 Suggests:
-    penAFT,
     testthat (>= 3.0.0)
 Depends:
     R (>= 4.0.0)
