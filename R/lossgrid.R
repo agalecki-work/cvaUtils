@@ -38,6 +38,6 @@ lossgrid.penAFT.cva <- function(x,..., cv.type = c("min", "1se")) {
     .dfList  <- lapply(x$modlist, function (mod){
               .ffit <- mod$full.fit
               data.frame(alpha = .ffit$alpha, lambda = .ffit$lambda, cv.err.linPred = mod$cv.err.linPred )
-              }
+              })
      do.call(rbind, .dfList)
 }
