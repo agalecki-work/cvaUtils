@@ -8,14 +8,14 @@ UseMethod("penAFT.cva")
 
 #' Elastic net cross-validation for alpha and lambda
 #' 
-#' Do elastic net cross-validation for alpha and lambda simultaneously (based on glmnetUtils package)
+#' Do elastic net cross-validation for alpha and lambda simultaneously by caling penAFT::penAFT.cv()mfunction
 #'
 #' @param x A matrix of predictor variables; or for the plotting methods, an object returned by `penAFT.cva`.
 #' @param logY A response vector ( with n-elements) of log-survival or log-censoring times.
 #' @param delta A binary vector indicating whether the jth element of logY is an observed log-survival time (d_j = 1) or a log-censoring time (d_j = 0) for j=1,..., n.
 #' @param alpha A vector of alpha values for which to do cross-validation. The default is a sequence of 11 values more closely spaced around alpha = 0. For the `predict` and `coef` methods, the specific value of alpha for which to return predictions/regression coefficients.
 #' @param nfolds The number of cross-validation folds to use. Defaults to 10.
-#' @param seed Seed value. Defualts to NULL.
+#' @param seed Seed value. If seed isprovided the same folds are used for every value of alpha. Defualts to NULL.
 #' @param outerParallel Method of parallelising the outer loop over alpha. See 'Details' below. If `NULL`, the loop is run sequentially.
 #' @param checkInnerParallel If the outer loop is run in parallel, check that the inner loop over lambda will not be in contention for cores.
 #'
