@@ -12,7 +12,7 @@ UseMethod("lossgrid")
 #' 
 
 lossgrid.default <- function(x, ...){
-message("lossgrid method not implemented for object of class:", class(x0[1])
+message("lossgrid method not implemented for object of class:", class(x)[1])
 }
 
 
