@@ -2,7 +2,7 @@
 % Please edit documentation in R/runScript.R
 \name{runScript}
 \alias{runScript}
-\title{Executes scripts stored in penAFTutils package}
+\title{Executes scripts stored in \code{cvaUtils} package}
 \usage{
 runScript(
   script = NA,
@@ -14,17 +14,17 @@ runScript(
 \arguments{
 \item{script}{character string containing name of the script to be executed. By default is set to NA.}
 
-\item{package}{character string containing package name. By default \code{penAFTutils}.}
+\item{package}{character string containing package name. By default \code{cvaUtils}.}
 
-\item{subdir}{subdirectory containing scripts. By default: scriptsR4.1.3}
+\item{subdir}{subdirectory containing scripts. By default: \code{scriptsR4.1.3}}
 
-\item{echo}{logical. Used by source function. By default set to TRUE.}
+\item{echo}{logical. Used by source function. By default set to \code{TRUE}.}
 }
 \value{
 Script is executed and results are printed.
 }
 \description{
-Default call of the function without arguments, prints a list of available scripts.
+Function excutes R script located in a specified subfolder. Default call of the function without arguments, prints a list of available scripts.
 }
 \examples{
 runScript()
