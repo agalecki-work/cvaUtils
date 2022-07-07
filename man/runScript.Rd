@@ -6,7 +6,7 @@
 \usage{
 runScript(
   script = NA,
-  package = "penAFTutils",
+  package = "cvaUutils",
   subdir = "scriptsR4.1.3",
   echo = TRUE
 )
