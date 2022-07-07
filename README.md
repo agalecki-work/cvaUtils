@@ -20,8 +20,12 @@ Approach 2
 library(cvaUtils)
 rm(list=ls())
 setwd("C:/temp")
-runScript()
 ```
 
 
+```
+runScript()
+runScript("01setup.R")
+runScript("02save_cva.R")
+runScript("03inspect_cva.R")
 ```
