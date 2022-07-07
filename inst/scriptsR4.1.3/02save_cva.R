@@ -1,4 +1,4 @@
-library(penAFTutils)
+library(cvaUtils)
 rm(list =ls())
 str(proteins21)
 dtc <- proteins21

@@ -1,7 +1,9 @@
 rm(list=ls())
-library(penAFTutils)
+library(cvaUtils)
 sessionInfo()
 
+?cvaUtils
+?runScript
 ?proteins21
 ?minlossplot
 
