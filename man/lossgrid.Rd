@@ -3,20 +3,23 @@
 \name{lossgrid}
 \alias{lossgrid}
 \alias{lossgrid.default}
-\title{lossgrid generic}
+\alias{lossgrid.penAFT.cva}
+\title{lossgrid.generic}
 \usage{
 lossgrid(x, ...)
 
 \method{lossgrid}{default}(x, ...)
+
+\method{lossgrid}{penAFT.cva}(x, ..., cv.type = c("min", "1se"))
 }
 \arguments{
-\item{x}{cva object}
+\item{x}{Object of}
+
+\item{cv.type}{This can be either \code{"min"} which is the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum.}
 }
 \description{
-lossgrid generic
+lossgrid default description
 }
-\section{Methods (by class)}{
-\itemize{
-\item \code{default}: Default
-}}
-
+\details{
+The \code{minlossplot} function gives the best (lowest) C-V loss for each value of alpha.
+}

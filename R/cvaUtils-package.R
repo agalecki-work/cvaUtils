@@ -4,7 +4,7 @@
 #' Utility functions for cva objects
 #'
 #' @docType package
-#' @name cvaUtils
+#' @name cvaUtils-package
 #' @details
 #'  For complete list of functions use:
 #' ```
@@ -12,8 +12,7 @@
 #' ```
 #'   or 
 #' ```
-#' indx <- system.file("html/00Index.html", package = "cvaUtils")
-#' browseURL(indx)
+#' help.start()
 #' ```
 ## assorted imports from base packages
 #' @importFrom graphics lines plot
