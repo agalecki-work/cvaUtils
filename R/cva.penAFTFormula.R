@@ -1,7 +1,9 @@
-#' @include cvaUtils.r
-NULL
-
+#' Elastic net cross-validation of alpha and lambda for penAFT model 
+#' 
+#' Do elastic net cross-validation of alpha and lambda simultaneously for penAFT models by calling penAFT::penAFT.cv() function
+#'
 #' @name penAFT.cva
+#' @rdname penAFT.cva
 #' @export
 penAFT.cva <- function(x, ...)
 UseMethod("penAFT.cva")
@@ -40,7 +42,6 @@ UseMethod("penAFT.cva")
 #'               nlambda = 50, lambda.ratio.min = 0.1, lambda = NULL,
 #'               penalty = "EN", nfolds = 5, seed = 1234)
 #' }
-#' @rdname penAFT.cva
 #' @method penAFT.cva default
 #' @importFrom parallel parLapply
 #' @importFrom penAFT penAFT.cv
