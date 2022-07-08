@@ -3,15 +3,15 @@
 \docType{package}
 \name{cvaUtils}
 \alias{cvaUtils}
-\alias{cvaUtils-package}
-\title{cvaUtils}
+\title{\code{cvaUtils} Package}
 \description{
 Utility functions for cva objects
 }
 \details{
-For complete list of functions use library(help = "cvaUtils")
-or
-indx <- system.file("html/00Index.html", package = "cvaUtils")
+For complete list of functions use:\preformatted{ library(help = "cvaUtils")
+}
+
+or\preformatted{indx <- system.file("html/00Index.html", package = "cvaUtils")
 browseURL(indx)
 }
-\keyword{internal}
+}
