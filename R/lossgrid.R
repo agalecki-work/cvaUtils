@@ -1,16 +1,11 @@
 ## https://roxygen2.r-lib.org/articles/rd.html
-#' lossgrid.generic
+#' @name lossgrid
 #' 
 #' @param x cva object
-#' @rdname lossgrid
 #' @export
 lossgrid <- function(x, ...) UseMethod("lossgrid")
 
 
-#' lossgrid.default 
-#'
-#' lossgrid default description
-#'
 #' @rdname lossgrid
 #' @export
 lossgrid.default <- function(x, ...){
