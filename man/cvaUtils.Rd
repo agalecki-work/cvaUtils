@@ -14,3 +14,4 @@ or
 indx <- system.file("html/00Index.html", package = "cvaUtils")
 browseURL(indx)
 }
+\keyword{internal}

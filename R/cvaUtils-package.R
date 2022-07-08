@@ -1,16 +1,20 @@
 ## Based on https://stuff.mit.edu/afs/athena/software/r/current/RStudio/resources/roxygen_help.html
-#' cvaUtils
+#' `cvaUtils` Package
 #'
 #' Utility functions for cva objects
 #'
 #' @docType package
 #' @name cvaUtils
-#' @aliases cvaUtils-package
 #' @details
-#'  For complete list of functions use library(help = "cvaUtils")
+#'  For complete list of functions use:
+#' ```
+#'  library(help = "cvaUtils")
+#' ```
 #'   or 
+#' ```
 #' indx <- system.file("html/00Index.html", package = "cvaUtils")
 #' browseURL(indx)
+#' ```
 ## assorted imports from base packages
 #' @importFrom graphics lines plot
 #' @importFrom grDevices palette topo.colors
