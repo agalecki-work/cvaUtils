@@ -3,8 +3,13 @@
 #'
 #'
 #' @docType package
-#' @name cvaUtils
-#' @aliases cvaUtils-package
+#' @alias cvaUtils-package
+#' @rdname cvaUtils
+#' @details
+#'  For complete list of functions use library(help = "cvaUtils")
+#'   or 
+#' indx <- system.file("html/00Index.html", package = "cvaUtils")
+#' browseURL(indx)
 NULL
 
 
