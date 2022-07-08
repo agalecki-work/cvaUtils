@@ -3,7 +3,7 @@
 \docType{package}
 \name{cvaUtils}
 \alias{cvaUtils}
-\title{\code{cvaUtils} Package}
+\title{cvaUtils Package}
 \description{
 Utility functions for cva objects
 }
