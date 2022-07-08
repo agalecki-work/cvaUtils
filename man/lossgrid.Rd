@@ -4,8 +4,7 @@
 \alias{lossgrid}
 \alias{lossgrid.default}
 \alias{lossgrid.penAFT.cva}
-\title{lossgrid.penAFT.cva
-Cross-validated loss for each value of alpha and lambda parameters from Elastic Net fit}
+\title{C-V loss}
 \usage{
 lossgrid(x, ...)
 
@@ -19,7 +18,6 @@ lossgrid(x, ...)
 \item{cv.type}{This can be either \code{"min"} which is the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum.}
 }
 \description{
-lossgrid.penAFT.cva
 Cross-validated loss for each value of alpha and lambda parameters from Elastic Net fit
 }
 \details{

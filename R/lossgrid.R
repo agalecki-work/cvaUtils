@@ -1,4 +1,9 @@
 ## https://roxygen2.r-lib.org/articles/rd.html
+
+#' C-V loss
+#'
+#' Cross-validated loss for each value of alpha and lambda parameters from Elastic Net fit 
+#'
 #' @name lossgrid
 #' 
 #' @param x cva object
@@ -13,9 +18,6 @@ message("lossgrid method not implemented for object of class:", class(x)[1])
 }
 
 
-#' lossgrid.penAFT.cva
-#`
-#' Cross-validated loss for each value of alpha and lambda parameters from Elastic Net fit 
 #'
 #' @param x Object of
 #' @param cv.type 
