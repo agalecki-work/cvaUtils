@@ -14,3 +14,4 @@ fit.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
                penalty = "EN", nfolds = 5, seed = 1234)
 setwd("C:/temp")
 save(fit.en.cva, file = "fit.en.cva.Rdata")
+detach(package:cvaUtils)

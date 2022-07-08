@@ -1,4 +1,4 @@
-#' @include penAFTUtils.r
+#' @include cvaUtils.r
 NULL
 
 #' @name penAFT.cva
@@ -6,16 +6,16 @@ NULL
 penAFT.cva <- function(x, ...)
 UseMethod("penAFT.cva")
 
-#' Elastic net cross-validation for alpha and lambda
+#' Elastic net cross-validation of alpha and lambda for penAFT model 
 #' 
-#' Do elastic net cross-validation for alpha and lambda simultaneously by caling penAFT::penAFT.cv()mfunction
+#' Do elastic net cross-validation of alpha and lambda simultaneously for penAFT models by calling penAFT::penAFT.cv() function
 #'
 #' @param x A matrix of predictor variables; or for the plotting methods, an object returned by `penAFT.cva`.
 #' @param logY A response vector ( with n-elements) of log-survival or log-censoring times.
 #' @param delta A binary vector indicating whether the jth element of logY is an observed log-survival time (d_j = 1) or a log-censoring time (d_j = 0) for j=1,..., n.
 #' @param alpha A vector of alpha values for which to do cross-validation. The default is a sequence of 11 values more closely spaced around alpha = 0. For the `predict` and `coef` methods, the specific value of alpha for which to return predictions/regression coefficients.
 #' @param nfolds The number of cross-validation folds to use. Defaults to 10.
-#' @param seed Seed value. If seed isprovided the same folds are used for every value of alpha. Defualts to NULL.
+#' @param seed Seed value. It is recommended to  provide seed value. As a result the same folds are used for every value of vector `alpha`. Defualts to NULL.
 #' @param outerParallel Method of parallelising the outer loop over alpha. See 'Details' below. If `NULL`, the loop is run sequentially.
 #' @param checkInnerParallel If the outer loop is run in parallel, check that the inner loop over lambda will not be in contention for cores.
 #'
@@ -44,7 +44,6 @@ UseMethod("penAFT.cva")
 #' @method penAFT.cva default
 #' @importFrom parallel parLapply
 #' @importFrom penAFT penAFT.cv
-#' @export
 penAFT.cva.default <- function (
       x, logY, delta, alpha = seq(0, 1, len = 11)^3,
       nfolds = 10,  seed = NULL, ..., 
