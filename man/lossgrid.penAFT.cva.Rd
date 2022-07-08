@@ -19,4 +19,3 @@ Cross-validated loss for each value of alpha and lambda parameters from Elastic 
 \details{
 The \code{minlossplot} function gives the best (lowest) C-V loss for each value of alpha.
 }
-\keyword{internal}

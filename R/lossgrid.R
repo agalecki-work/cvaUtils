@@ -24,7 +24,6 @@ message("lossgrid method not implemented for object of class:", class(x)[1])
 #'
 #' @details
 #' The `minlossplot` function gives the best (lowest) C-V loss for each value of alpha.
-#' @rdname lossgrid.penAFT.cva
 #' @method lossgrid penAFT.cva
 #' @describeIn lossgrid lossgrid.penAFT.cva
 #' @export

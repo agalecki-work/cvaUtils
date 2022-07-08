@@ -2,10 +2,21 @@
 % Please edit documentation in R/lossgrid.R
 \name{lossgrid}
 \alias{lossgrid}
-\title{lossgrid}
+\alias{lossgrid.default}
+\title{lossgrid generic}
 \usage{
 lossgrid(x, ...)
+
+\method{lossgrid}{default}(x, ...)
+}
+\arguments{
+\item{x}{cva object}
 }
 \description{
-lossgrid
+lossgrid generic
 }
+\section{Methods (by class)}{
+\itemize{
+\item \code{default}: Default
+}}
+
