@@ -1,15 +1,12 @@
-#' lossgrid
-#'
-#' lossgrid
-#'
-#' @export
-lossgrid <- function(x, ...)
-UseMethod("lossgrid")
-
-
-#' lossgrid
+## https://roxygen2.r-lib.org/articles/rd.html
+#' lossgrid generic
 #' 
-#' @keywords internal
+#' @param x cva object
+#' @export
+lossgrid <- function(x, ...) UseMethod("lossgrid")
+
+
+#' @describeIn lossgrid Default 
 #' @export
 
 lossgrid.default <- function(x, ...){
@@ -29,7 +26,7 @@ message("lossgrid method not implemented for object of class:", class(x)[1])
 #' The `minlossplot` function gives the best (lowest) C-V loss for each value of alpha.
 #' @rdname lossgrid.penAFT.cva
 #' @method lossgrid penAFT.cva
-#' @keywords internal
+#' @describeIn lossgrid lossgrid.penAFT.cva
 #' @export
 lossgrid.penAFT.cva <- function(x,..., cv.type = c("min", "1se")) {
     alpha <- x$alpha
