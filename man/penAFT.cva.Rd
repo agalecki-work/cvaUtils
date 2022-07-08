@@ -3,7 +3,7 @@
 \name{penAFT.cva}
 \alias{penAFT.cva}
 \alias{penAFT.cva.default}
-\title{Elastic net cross-validation for alpha and lambda}
+\title{Elastic net cross-validation of alpha and lambda for penAFT model}
 \usage{
 penAFT.cva(x, ...)
 
@@ -30,14 +30,14 @@ penAFT.cva(x, ...)
 
 \item{nfolds}{The number of cross-validation folds to use. Defaults to 10.}
 
-\item{seed}{Seed value. If seed isprovided the same folds are used for every value of alpha. Defualts to NULL.}
+\item{seed}{Seed value. It is recommended to  provide seed value. As a result the same folds are used for every value of vector \code{alpha}. Defualts to NULL.}
 
 \item{outerParallel}{Method of parallelising the outer loop over alpha. See 'Details' below. If \code{NULL}, the loop is run sequentially.}
 
 \item{checkInnerParallel}{If the outer loop is run in parallel, check that the inner loop over lambda will not be in contention for cores.}
 }
 \description{
-Do elastic net cross-validation for alpha and lambda simultaneously by caling penAFT::penAFT.cv()mfunction
+Do elastic net cross-validation of alpha and lambda simultaneously for penAFT models by calling penAFT::penAFT.cv() function
 }
 \details{
 The \code{penAFT.cva} function does simultaneous cross-validation for both the alpha and lambda parameters in an elastic net model. The procedure is as outlined in the documentation for \link[glmnet:cv.glmnet]{glmnet::cv.glmnet}: it creates a vector \code{foldid} allocating the observations into folds, and then calls \code{penAFT.cv} in a loop over different values of alpha, but the same values of \code{foldid} each time.
