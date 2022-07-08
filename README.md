@@ -13,7 +13,7 @@ Approach 1 (recommended)
 Approach 2
 
 ```
-devtools::install_github("agalecki-work/cvaUtils", build_vignettes = TRUE)`
+devtools::install_github("agalecki-work/cvaUtils", build_vignettes = TRUE)
 indx <- system.file("html/00Index.html", package = "cvaUtils")
 browseURL(indx)
 ```
