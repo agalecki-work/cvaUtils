@@ -9,7 +9,8 @@ UseMethod("lossgrid")
 
 #' lossgrid
 #' 
-#' 
+#' @keywords internal
+#' @export
 
 lossgrid.default <- function(x, ...){
 message("lossgrid method not implemented for object of class:", class(x)[1])
@@ -28,6 +29,7 @@ message("lossgrid method not implemented for object of class:", class(x)[1])
 #' The `minlossplot` function gives the best (lowest) C-V loss for each value of alpha.
 #' @rdname lossgrid.penAFT.cva
 #' @method lossgrid penAFT.cva
+#' @keywords internal
 #' @export
 lossgrid.penAFT.cva <- function(x,..., cv.type = c("min", "1se")) {
     alpha <- x$alpha

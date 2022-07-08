@@ -1,5 +1,5 @@
 ## Based on https://stuff.mit.edu/afs/athena/software/r/current/RStudio/resources/roxygen_help.html
-#' `cvaUtils` Package
+#' cvaUtils Package
 #'
 #' Utility functions for cva objects
 #'
