@@ -1,5 +1,5 @@
 Package: cvaUtils
-Version: 0.0-4
+Version: 0.0-5
 Title: Utility Functions for cva objects
 Authors@R: 
     person("Andrzej", "Galecki", , "agalecki@umich.edu", role = c("aut", "cre"),
