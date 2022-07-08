@@ -17,12 +17,4 @@ RoxygenNote: 7.1.2
 Roxygen: list(markdown=TRUE)
 Encoding: UTF-8
 LazyData: true
-Collate: 
-    'cvaUtils.r'
-    'cva.penAFTFormula.R'
-    'lossgrid.R'
-    'minlossplot.R'
-    'predict.penAFT.R'
-    'proteins21.R'
-    'runScript.R'
 Config/testthat/edition: 3

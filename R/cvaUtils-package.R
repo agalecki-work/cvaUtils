@@ -1,18 +1,16 @@
-#' @title Utilities for cva objects
-#' @description Utility functions to streamline the process of fitting elastic net models.
+## Based on https://stuff.mit.edu/afs/athena/software/r/current/RStudio/resources/roxygen_help.html
+#' cvaUtils
 #'
+#' Utility functions for cva objects
 #'
 #' @docType package
-#' @alias cvaUtils-package
-#' @rdname cvaUtils
+#' @name cvaUtils
+#' @aliases cvaUtils-package
 #' @details
 #'  For complete list of functions use library(help = "cvaUtils")
 #'   or 
 #' indx <- system.file("html/00Index.html", package = "cvaUtils")
 #' browseURL(indx)
-NULL
-
-
 ## assorted imports from base packages
 #' @importFrom graphics lines plot
 #' @importFrom grDevices palette topo.colors
