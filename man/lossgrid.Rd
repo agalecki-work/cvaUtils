@@ -4,27 +4,28 @@
 \alias{lossgrid}
 \alias{lossgrid.default}
 \alias{lossgrid.penAFT.cva}
-\title{C-V loss}
+\title{C-V loss for \code{cva} objects}
 \usage{
 lossgrid(x, ...)
 
 \method{lossgrid}{default}(x, ...)
 
-\method{lossgrid}{penAFT.cva}(x, ..., cv.type = c("min", "1se"))
+\method{lossgrid}{penAFT.cva}(x, ..., cv.vars = "cv.err.linPred ", cv.type = c("min", "1se"))
 }
 \arguments{
-\item{x}{Object of}
+\item{x}{cva object (for example object of penAFT.cva class)}
 
-\item{cv.type}{This can be either \code{"min"} which is the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum.}
+\item{cv.type}{This can be either \code{"min"} which is
+the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum.
+The default is \code{"min"}.}
+}
+\value{
+Data frame with one row per each combination of alpha and lambda values
 }
 \description{
-\code{lossgrid} returns cross-validated loss for each value of alpha and lambda parameters from Elastic Net fit
-
-Desc2
-
-Desc3
+\code{lossgrid} returns cross-validated loss for each value of alpha and lambda parameters
 }
 \details{
-The \code{lossgrid} is a generic function applied to cva objects gives C-V loss for each value
-of alpha and lambda hyperparameters.
+The \code{lossgrid} is a generic function applied to cva objects. Returns dataframe with the info
+on C-V loss for each combination of alpha and lambda hyperparametervalues.
 }
