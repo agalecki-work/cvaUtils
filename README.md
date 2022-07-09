@@ -14,17 +14,19 @@ Approach 2
 
 ```
 devtools::install_github("agalecki-work/cvaUtils", build_vignettes = TRUE)
-indx <- system.file("html/00Index.html", package = "cvaUtils")
-browseURL(indx)
-help.start()
 ```
+
+To check package documentation use `help.start()`
+
 
 ## Run scripts
 
 ```
 library(cvaUtils)
+?cvaUtils  # ... check Index fike
 rm(list=ls())
 setwd("C:/temp")
+list.files()
 ```
 
 
