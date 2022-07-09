@@ -18,8 +18,13 @@ lossgrid(x, ...)
 \item{cv.type}{This can be either \code{"min"} which is the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum.}
 }
 \description{
-Cross-validated loss for each value of alpha and lambda parameters from Elastic Net fit
+\code{lossgrid} returns cross-validated loss for each value of alpha and lambda parameters from Elastic Net fit
+
+Desc2
+
+Desc3
 }
 \details{
-The \code{minlossplot} function gives the best (lowest) C-V loss for each value of alpha.
+The \code{lossgrid} is a generic function applied to cva objects gives C-V loss for each value
+of alpha and lambda hyperparameters.
 }

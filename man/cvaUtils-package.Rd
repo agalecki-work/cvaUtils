@@ -2,15 +2,23 @@
 % Please edit documentation in R/cvaUtils-package.R
 \docType{package}
 \name{cvaUtils-package}
+\alias{cvaUtils}
 \alias{cvaUtils-package}
-\title{cvaUtils Package}
+\title{cvaUtils: Utility Functions for cva Objects}
 \description{
-Utility functions for cva objects
+Utility Functions for cva Objects
 }
 \details{
-For complete list of functions use:\preformatted{ library(help = "cvaUtils")
+For a complete list of functions use:\preformatted{ library(help = "cvaUtils")
 }
 
 or\preformatted{help.start()
 }
+
+and locate \code{cvaUtils} package
 }
+\author{
+\strong{Maintainer}: Andrzej Galecki \email{agalecki@umich.edu} (\href{https://orcid.org/0000-0003-1542-4001}{ORCID})
+
+}
+\keyword{internal}

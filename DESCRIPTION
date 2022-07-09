@@ -1,12 +1,11 @@
 Package: cvaUtils
-Version: 0.0-5
-Title: Utility Functions for cva objects
+Version: 0.0-6
+Title: Utility Functions for cva Objects
 Authors@R: 
     person("Andrzej", "Galecki", , "agalecki@umich.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-1542-4001"))
 Maintainer: Andrzej Galecki <agalecki@umich.edu>
-Description: ?
-             ?
+Description: Utility Functions for cva Objects
 Suggests:
     testthat (>= 3.0.0)
 Depends:

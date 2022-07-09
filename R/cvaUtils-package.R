@@ -1,12 +1,9 @@
 ## Based on https://stuff.mit.edu/afs/athena/software/r/current/RStudio/resources/roxygen_help.html
-#' cvaUtils Package
+## see library/roxygen2/doc/rd.html
+## https://bookdown.dongzhuoer.com/hadley/r-pkgs/man.html (Section 8)
 #'
-#' Utility functions for cva objects
-#'
-#' @docType package
-#' @name cvaUtils-package
 #' @details
-#'  For complete list of functions use:
+#'  For a complete list of functions use:
 #' ```
 #'  library(help = "cvaUtils")
 #' ```
@@ -14,9 +11,11 @@
 #' ```
 #' help.start()
 #' ```
+#'  and locate `cvaUtils` package 
 ## assorted imports from base packages
 #' @importFrom graphics lines plot
 #' @importFrom grDevices palette topo.colors
 #' @importFrom stats coef na.pass predict terms .getXlevels delete.response
 #' @importFrom stats model.frame model.extract model.matrix model.response
-NULL
+#' @keywords internal
+"_PACKAGE"
