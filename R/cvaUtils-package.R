@@ -13,6 +13,7 @@
 #' ```
 #'  and locate `cvaUtils` package 
 ## assorted imports from base packages
+#' @importFrom glmnetUtils minlossplot
 #' @importFrom graphics lines plot
 #' @importFrom grDevices palette topo.colors
 #' @importFrom stats coef na.pass predict terms .getXlevels delete.response
