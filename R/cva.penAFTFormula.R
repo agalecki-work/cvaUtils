@@ -45,6 +45,7 @@ UseMethod("penAFT.cva")
 #' @method penAFT.cva default
 #' @importFrom parallel parLapply
 #' @importFrom penAFT penAFT.cv
+#' @export
 penAFT.cva.default <- function (
       x, logY, delta, alpha = seq(0, 1, len = 11)^3,
       nfolds = 10,  seed = NULL, ..., 
