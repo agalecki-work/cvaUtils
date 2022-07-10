@@ -54,7 +54,7 @@ penAFT.cva.default <- function (
     .cvfunc <- function(a, xmat, logY, delta, nfolds, seed, ...) {
         if (!is.null(seed)) set.seed(seed)
         cat("--- alpha=", a, "--- \n")
-        penAFT::penAFT.cv(xmat, logY, delta, alpha = a, nfolds = nfolds, ...)
+        penAFT::penAFT.cv(x, logY, delta, alpha = a, nfolds = nfolds, ...)
     }
     .chkPar <- function() {
         if (checkInnerParallel && isTRUE(dotargs$parallel)) {
