@@ -22,6 +22,7 @@ download.file("https://web.stanford.edu/~hastie/glmnet/glmnetData/Leukemia.RData
 
 load("Leukemia.Rdata")
 leuk <- do.call(data.frame, Leukemia)
+library(glmnetUtils)
 leuk.glmnet.cva <- cva.glmnet(y ~ ., leuk, family="binomial")
 
 
