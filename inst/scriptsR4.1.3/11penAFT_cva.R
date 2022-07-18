@@ -3,12 +3,13 @@ sessionInfo()
 rm(list =ls())
 
 setwd("C:/temp")
+list.files()
 
 load("cvaObjects.Rdata")
 ls()
 
 #--- Inspecting penAFT.en.cva object
-class(penAFTcva)
+class(penAFT.en.cva)
 
 # Create `xnew` data for testing
 
@@ -21,7 +22,8 @@ which.alpha <- 3
 mod <- penAFT.en.cva$modlist[[which.alpha]]
 str(mod)
 penAFT::penAFT.predict(mod, Xnew =xnew, lambda = mod$full.fit$lmbda[10])
-enAFT
+
+
 predict(penAFT.en.cva, newx=xnew, alpha = alpha[which.alpha])
 minlossplot(penAFT.en.cva)
-
+lossdf <- lossgrid(penAFT.en.cva)

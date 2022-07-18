@@ -43,7 +43,7 @@ message("lossgrid method not implemented for object of class:", class(x)[1])
 #' @export
 lossgrid.penAFT.cva <- function(x,...,  cv.vars = "cv.err.linPred ", cv.type = c("min", "1se")) {
     alpha <- x$alpha
-    cv.type <- match.arg(cv.type,,)
+    cv.type <- match.arg(cv.type)
     if (cv.type == "1se") stop("lossgrid.penAFT.cva method: cv.type = 1se not implemented \n")
     cv.type <- paste0("lambda.", cv.type)
     

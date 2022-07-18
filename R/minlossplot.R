@@ -33,7 +33,7 @@ minlossplot.penAFT.cva <- function(x, ...,
     } else if (plot.it == "min") {
     cvm2 <- apply(cvm, 2, min)
     # print(cvm2)
-    plot (cvm2 ~ alpha, type = c("b"), ylab = "err.linPred_min", xlab = "lambda")
+    plot (cvm2 ~ alpha, type = c("b"), ylab = "err.linPred_min", xlab = "alpha")
     }
     invisible(x)
 }
