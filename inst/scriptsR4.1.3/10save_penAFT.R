@@ -1,3 +1,4 @@
+
 setwd("C:/temp")
 
 library(cvaUtils)
@@ -19,6 +20,8 @@ library(penAFT)
 # -----------------------------------------------
 # Fit elastic net penalized estimator
 # -----------------------------------------------
+# Notes: alpha is scalar
+#      
 penAFT.en <- penAFT(X = X, logY = logY, delta = delta,
                    nlambda = 50, lambda.ratio.min = 0.01,
                    penalty = "EN",
@@ -36,23 +39,15 @@ class(penAFT.en.cv)# penAFT.cv
 
 
 # penAFTcva
-
+# Note: alpha is a vector
 alpha <- seq(0, 1, len = 11)^3
 penAFT.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
                alpha = alpha,
                nlambda = 50, lambda.ratio.min = 0.1, lambda = NULL,
                penalty = "EN", nfolds = 5, seed = 1234)
 class(penAFT.en.cva)
-# 
 
-download.file("https://web.stanford.edu/~hastie/glmnet/glmnetData/Leukemia.RData",
-               "Leukemia.RData")
+save(penAFT.en, penAFT.en.cv, penAFT.en.cva, file = "10penAFT.Rdata")
 
-load("Leukemia.Rdata")
-leuk <- do.call(data.frame, Leukemia)
-library(glmnetUtils)
-leuk.glmnet.cva <- cva.glmnet(y ~ ., leuk, family="binomial")
-class(leuk.glmnet.cva)
-
-save(penAFT.en.cva, leuk.glmnet.cva , file = "cvaObjects.Rdata")
 detach(package:cvaUtils)
+detach(package:penAFT)
