@@ -11,6 +11,8 @@ X  <- as.matrix(dtc[, 3:26])
 logY  <- log(dtc[, "time"]) 
 delta <- dtc[, "status"]   # status=0 indicates censored observation 
 
+# Data for testing (First 5 rows)
+dtc5 <- dtc[ ,1:5]
 
 #--  ?penAFT{penAFT]
 library(penAFT)
@@ -38,8 +40,9 @@ penAFT.en.cv <- penAFT.cv(X = X, logY = logY, delta = delta,
 class(penAFT.en.cv)# penAFT.cv
 
 
-# penAFTcva
-# Note: alpha is a vector
+# ?penAFT.cva{cvaUtils}
+# Notes: alpha is a numeric vector with values ranging from 0 to 1 
+#   Setting seed to  constant allows to use the same folds for all elements of alpha
 alpha <- seq(0, 1, len = 11)^3
 penAFT.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
                alpha = alpha,
@@ -47,7 +50,7 @@ penAFT.en.cva <- penAFT.cva(x=X, logY = logY, delta = delta,
                penalty = "EN", nfolds = 5, seed = 1234)
 class(penAFT.en.cva)
 
-save(penAFT.en, penAFT.en.cv, penAFT.en.cva, file = "10penAFT.Rdata")
+save(dtc5, penAFT.en, penAFT.en.cv, penAFT.en.cva, file = "10penAFT.Rdata")
 
 detach(package:cvaUtils)
 detach(package:penAFT)
