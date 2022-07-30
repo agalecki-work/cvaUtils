@@ -1,3 +1,3 @@
 .onAttach <-function(libname,pckname){
-packageStartupMessage("The cvaUtils version attached is: ", utils::packageVersion("cvaUtils"))
+packageStartupMessage("Version: ", utils::packageVersion("cvaUtils"),". Built on: ",  utils::packageDate("cvaUtils"))
 }
