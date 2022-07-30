@@ -89,7 +89,7 @@ penAFT.cva.default <- function (
         lapply(alpha, .cvfunc, xmat = x, logY = logY, delta= delta, nfolds = nfolds, seed=seed, ...)
     }
     else stop("unknown value for outerParallel")
-    out <- list(alpha = alpha, nfolds = nfolds, seed=seed, modlist = lst, 
+    out <- list(alpha = alpha, nfolds = nfolds, seed=seed, dotargs = dotargs, modlist = lst, 
         call = cl)
     class(out) <- "penAFT.cva"
     out
