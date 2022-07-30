@@ -49,7 +49,9 @@ lossgrid.penAFT.cva <- function(x,...,  cv.vars = "cv.err.linPred ", cv.type = c
     
     .dfList  <- lapply(x$modlist, function (mod){
               .ffit <- mod$full.fit
-              .dfx  <- data.frame(alpha = .ffit$alpha, lambda = .ffit$lambda, 
+              .dfx  <- data.frame(alpha = .ffit$alpha,
+                                 lambda_idx = seq(from=1, to = length(.ffit$lambda)),
+                                 lambda = .ffit$lambda, 
                                  cv.err.linPred = mod$cv.err.linPred )
               .dfx[[cv.type]] <- .ffit$lambda == mod[[cv.type]]
               .dfx
