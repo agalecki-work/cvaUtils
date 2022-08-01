@@ -9,11 +9,15 @@
 Utility Functions for cva Objects
 }
 \details{
-For a complete list of functions use:\preformatted{ library(help = "cvaUtils")
-}
+For a complete list of functions use:
 
-or\preformatted{help.start()
-}
+\if{html}{\out{<div class="sourceCode">}}\preformatted{ library(help = "cvaUtils")
+}\if{html}{\out{</div>}}
+
+or
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{help.start()
+}\if{html}{\out{</div>}}
 
 and locate \code{cvaUtils} package
 }

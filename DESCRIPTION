@@ -12,7 +12,7 @@ Depends:
     R (>= 4.0.0)
 License: GPL (>= 2)
 VignetteBuilder: knitr
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Roxygen: list(markdown=TRUE)
 Encoding: UTF-8
 LazyData: true
