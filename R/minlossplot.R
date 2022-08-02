@@ -37,12 +37,12 @@ minlossplot.penAFT.cva <- function(x, ...,
     #plot(alpha, cvm, ylab="CV loss", ...)
     nx <- length(alpha)
     if (plot.it == "all") {
-    matplot(cvm, type = c("b"), pch =1, col= 1:nx, ylab = "err.linPred")
+    matplot(cvm, type = c("b"), pch =1, col= 1:nx, ylab = "cv.err.linPred")
     legend("topleft", legend = 1:nx, col=1:nx, pch=1)
     } else if (plot.it == "min") {
     cvm2 <- apply(cvm, 2, min)
     # print(cvm2)
-    plot (cvm2 ~ alpha, type = c("b"), ylab = "err.linPred_min", xlab = "alpha")
+    plot (cvm2 ~ alpha, type = c("b"), ylab = "cv.err.linPred_min", xlab = "alpha")
     }
     invisible(x)
 }
