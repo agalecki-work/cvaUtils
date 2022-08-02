@@ -13,7 +13,7 @@
 This can be either \code{"min"} which is the minimum loss, or \code{"1se"} which is the highest loss within 1 standard error of the minimum.}
 }
 \description{
-minloss desc
+minloss desc2
 }
 \details{
 The \code{minlossplot} function gives the best (lowest) C-V loss for each value of alpha.

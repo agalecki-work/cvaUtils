@@ -1,6 +1,15 @@
 #' minlossplot
 #'
-#' minloss desc
+#' minloss desc1
+#'
+#' @name minlossplot
+#' @export
+function (x, ...) UseMethod("minlossplot")
+
+
+#' minlossplot
+#'
+#' minloss desc2
 #'
 #' @param x Object 
 #' @param cv.type For `minlossplot`, which cross-validated loss value to plot for each value of alpha.
