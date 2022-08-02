@@ -57,5 +57,9 @@ lossgrid.penAFT.cva <- function(x,...,  cv.vars = "cv.err.linPred ", cv.type = c
               ### .dfx[[cv.type]] <- .ffit$lambda == mod[[cv.type]]  # Does not work as intended
               .dfx <- within(.dfx, {cv.err.linPred_min <- cv.err.linPred == min(cv.err.linPred)})
               })
-     do.call(rbind, .dfList)
+     .res <- do.call(rbind, .dfList)
+     .nms <- colnames(.res)
+     attributes(.res) <- list(alpha=alpha, seed=x$seed)
+     names(.res) <- .nms
+     return(.res)
 }
