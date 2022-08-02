@@ -1,6 +1,6 @@
 #' minlossplot
 #'
-#' minloss desc1
+#' minlossplot functiom
 #'
 #' @name minlossplot
 #' @export
